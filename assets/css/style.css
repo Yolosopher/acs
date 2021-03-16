@@ -149,6 +149,16 @@ body.noscroll {
   overflow-y: hidden;
 }
 
+main {
+  min-height: calc(100vh - 220px);
+}
+
+@media screen and (min-width: 1366px) {
+  main {
+    min-height: calc(100vh - 276px);
+  }
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -485,14 +495,7 @@ body.noscroll {
 }
 
 .periodic {
-  min-height: calc(100vh - 220px);
   color: #fff;
-}
-
-@media screen and (min-width: 1366px) {
-  .periodic {
-    min-height: calc(100vh - 276px);
-  }
 }
 
 .periodic__content {
