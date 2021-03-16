@@ -1,0 +1,183 @@
+.header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    color: #fff
+    z-index: 8
+    position: fixed
+    top: 0
+    padding: 20px 10px
+    width: 100%
+    height: 110px
+    background-color: $black
+    @include plus1366()
+        position: relative
+        background-color: transparent
+        height: unset
+        padding: 30px 60px
+        margin-bottom: 16px
+    @include sizePlus(1600px)
+        padding: 40px 108px
+        margin-bottom: 25px
+    &__logo
+        position: absolute
+        top: 20px
+        left: 10px
+        display: flex
+        z-index: 1
+        img
+            height: 100%
+            object-fit: contain
+            display: none
+        .small
+            display: unset
+        @include plus1366()
+            position: static
+            .small
+                display: none
+            .medium
+                display: unset
+        @include sizePlus(1900px)
+            .medium
+                display: none
+            .large
+                display: unset
+    &__nav
+        display: flex
+        justify-content: flex-end
+
+        position: fixed
+        top: 43px
+        right: 0
+        width: 100vw
+        @include plus1366()
+            align-self: flex-start               
+            height: unset
+            position: static
+        &__ul
+            display: grid
+            width: 100%
+            grid-template-rows: repeat(4, auto)
+            align-content: center
+            grid-gap: 10px
+            height: max-content
+            justify-items: center
+            align-items: center
+            position: relative
+            transform: translateY(0px)
+            transition: all .4s ease-out
+            @include plus1366()
+                grid-template-columns: repeat(4, auto)
+                grid-template-rows: unset
+                grid-gap: 30px
+
+            &__wrapper
+                display: flex
+                width: 100%
+                overflow: hidden
+                background-color: $black
+                height: 43px
+                transition: all .5s ease-out
+                z-index: -1
+                @include plus1366()
+                    background-color: transparent
+                    z-index: initial
+                    width: max-content
+            &__li
+                display: block
+                opacity: 0
+                transition: opacity .4s ease-out
+                @include plus1366()
+                    opacity: 1
+                &:active
+                    a
+                        color: #fff
+                &:hover
+                    @include plus1366()
+                        a
+                            color: #fff
+                &.active
+                    opacity: 1
+                    order: -1
+                    @include plus1366()
+                        order: 0
+                    a
+                        position: relative
+                        color: #fff
+                        @include plus1366()
+                            &::after
+                                content: ''
+                                position: absolute
+                                bottom: -15px
+                                right: 50%
+                                transform: translateX(50%)
+                                display: block
+                                width: 8px
+                                height: 8px
+                                border-radius: 50%
+                                background-color: $orange
+            a
+                @include font(18px, 23px)
+                color: $orange
+                text-transform: capitalize
+                font-weight: 600
+                    
+            
+        &.toggled
+            .header__nav__ul
+                grid-gap: 46px
+                transform: translateY(calc( (100vh - 43px) / 2 - 50% ))
+                &__li
+                    opacity: 1
+                &__wrapper
+                    height: calc(100vh - 43px)
+            .burger
+                span
+                    &:nth-child(1)
+                        transform: rotate(45deg)
+                        top: 6px
+                    &:nth-child(2)
+                        width: 0
+                    &:nth-child(3)
+                        transform: rotate(-45deg)
+                        top: 6px
+
+
+    .burger-container
+        position: absolute
+        right: 10px
+        top: -10px
+        @include plus1366()
+            display: none
+    
+// burger
+.burger-container
+    width: 46px
+    height: 46px
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 50%
+    border: 1px solid #111
+.burger
+    display: block
+    height: 12px
+    position: relative
+    width: 18px
+    cursor: pointer
+    span
+        width: 18px
+        height: 2px
+        background-color: $orange
+        display: block
+        position: absolute
+        border-radius: 15px
+        transition-duration: .5s
+        &:nth-child(2)
+            top: 6px
+        &:nth-child(3)
+            top: 12px
+
+// burger end
+
+

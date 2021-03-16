@@ -1,0 +1,177 @@
+@import 'variables'
+
+// Mixins
+@mixin transition($args)
+	-webkit-transition: $args
+	transition: $args
+
+@mixin transform($args)
+	-webkit-transform: $args
+	-ms-transform: $args
+	transform: $args
+
+@mixin transform-origin($args)
+	-webkit-transform-origin: $args
+	-ms-transform-origin: $args
+	transform-origin: $args
+
+// Styles
+body
+	// font-family: Arial
+	@include transform(translateZ(0)) // prevent flashing
+
+.periodic
+	position: relative
+	height: 200px
+	margin-right: -1px
+	text-shadow: none
+
+.periodic-row
+	clear: both
+	height: 56px	
+	@include plus1025()
+		height: 63px
+	@include plus1600()
+		height: 90px
+
+.cell
+	float: left
+	position: relative
+	width: 56px
+	height: 100%
+	@include plus1025()
+		width: 63px
+	@include plus1600()
+		width: 90px
+	&__num
+		display: flex
+		width: 100%
+		height: 100%
+		justify-content: center
+		align-items: center
+		@include font(32px, 40px)
+		font-family: bld
+.element
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 5px
+	right: 5px
+	box-sizing: border-box
+	border-radius: 12px
+	// box-shadow: 0px 0px 4px rgba(255,255,255,0.5)
+	// border: 1px solid rgba(0,0,0,0.05)
+	text-align: center
+	cursor: default
+	pointer-events: none
+	@include transition(all 200ms ease)
+
+	background-color: #AA0C1C
+
+.cell:hover .element
+	border-color: rgba(0, 0, 0, 0.1)
+	@include transform(scale(3, 3))
+	z-index: 1
+
+	background-color: rgba(0, 128, 128, 0.9)
+
+.at_num,
+.at_details
+	position: absolute
+	font-size: 4px
+	color: rgba(255, 255, 255, 0.5)
+	opacity: 0
+
+.at_num
+	top: 4px
+	right: 5px
+
+.symbol
+	position: absolute
+	top: 50%
+	left: 0px
+	right: 0px
+	margin-top: -4px
+	font-size: 9px
+	line-height: 1
+	height: 9px
+	color: rgba(255, 255, 255, 0.9)
+
+.at_details
+	bottom: 4px
+	left: 0px
+	right: 0px
+
+// styles based on nth-child
+.cell:nth-child(-n + 2) .element,
+.cell:nth-child(n + 13) .element
+	background-color: #C69119
+
+.periodic-row:nth-child(1) .cell:nth-child(1) .element,
+.periodic-row:nth-child(2) .cell:nth-child(1) .element,
+.periodic-row:nth-child(3) .cell:nth-child(1) .element,
+.periodic-row:nth-child(4) .cell:nth-child(1) .element,
+.periodic-row:nth-child(5) .cell:nth-child(1) .element,
+.periodic-row:nth-child(6) .cell:nth-child(1) .element,
+.periodic-row:nth-child(7) .cell:nth-child(1) .element
+	background-color: #A8621B
+
+.periodic-row:nth-child(1) .cell:nth-child(1) .element,
+.periodic-row:nth-child(2) .cell:nth-child(n + 14) .element,
+.periodic-row:nth-child(3) .cell:nth-child(n + 15) .element,
+.periodic-row:nth-child(4) .cell:nth-child(n + 16) .element,
+.periodic-row:nth-child(5) .cell:nth-child(n + 17) .element
+	background-color: #61a31f
+
+.periodic-row:nth-child(-n + 6) .cell:nth-child(18) .element
+	background-color: rgba(64, 192, 0, 0.6)
+
+.periodic-row:nth-child(n + 9) .element
+	background-color: rgba(0, 96, 160, 0.6)
+
+// hover styles
+.cell:nth-child(-n + 2):hover .element,
+.cell:nth-child(n + 13):hover .element
+	background-color: #165B9F
+
+.cell:nth-child(1):hover .element,
+.periodic-row:nth-child(2) .cell:nth-child(n + 14):hover .element,
+.periodic-row:nth-child(3) .cell:nth-child(n + 15):hover .element,
+.periodic-row:nth-child(4) .cell:nth-child(n + 16):hover .element,
+.periodic-row:nth-child(5) .cell:nth-child(n + 17):hover .element
+	background-color: rgba(0, 192, 64, 0.9)
+
+.periodic-row:nth-child(-n + 6) .cell:nth-child(18):hover .element
+	background-color: rgba(64, 192, 0, 0.9)
+
+.periodic-row:nth-child(n + 9) .cell:hover .element
+	background-color: rgba(0, 96, 160, 0.9)
+
+// hover state positioning
+// left hand column
+.cell:nth-child(1) .element
+	@include transform-origin(0 50%)
+
+// right hand column
+.cell:nth-child(18) .element
+	@include transform-origin(100% 50%)
+
+// bottom row
+.periodic-row:nth-child(10) .cell .element
+	@include transform-origin(50% 100%)
+
+// top left corner
+.periodic-row:nth-child(1) .cell:nth-child(1) .element
+	@include transform-origin(0 0)
+
+// top right corner
+.periodic-row:nth-child(1) .cell:nth-child(18) .element
+	@include transform-origin(100% 0)
+
+// bottom right corner
+.periodic-row:nth-child(10) .cell:nth-child(18) .element
+	@include transform-origin(100% 100%)
+
+// Media queries to change size of table
+// small tablet portrait
+

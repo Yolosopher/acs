@@ -1,0 +1,47 @@
+@import fonts
+@import variables
+@import defaults
+// @import periodictable
+
+
+// components
+@import header
+@import myperiodic
+
+
+
+.footer
+    width: 100%
+    background-color: #111111
+    position: relative
+    height: 110px
+    color: #fff
+    
+    @include plus1366()
+        height: 166px
+    &__content
+        height: 100%
+        display: flex
+        align-items: center
+        flex-direction: column
+        justify-content: space-between
+        padding: 20px 0
+        @include plus1366()
+            position: relative
+            flex-direction: row
+            justify-content: space-between
+    &__mail
+        @include plus1366()
+            position: absolute
+            left: 50%
+            transform: translateX(-50%)
+        
+    &__C
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: 100%
+        &__smartweb
+            text-transform: capitalize
+            a
+                color: $orange

@@ -1,0 +1,241 @@
+@include plus1366()
+    body
+        position: relative
+        .linebg
+            content: ''
+            position: absolute
+            right: 0
+            top: 0
+            width: 100%
+            height: calc(100% - 150px)
+            height: 100%
+            z-index: -999
+            display: grid
+            grid-template-columns: repeat(18, 1fr)
+            justify-items: center
+            &__line
+                width: 1px
+                height: 100%
+                background-color: rgba(#fff, .05)
+                
+.periodic
+    min-height: calc(100vh - #{110px + 110px})
+    color: #fff
+    @include plus1366()
+        min-height: calc(100vh - #{110px + 166px})
+    &__content
+        overflow-x: auto
+        padding-bottom: 30px
+        margin-bottom: 30px
+        position: relative
+        @include plus1366()
+            overflow-x: visible
+            margin-bottom: 70px
+            padding-bottom: 0
+        @include sizePlus(1900px)
+            margin-bottom: 100px
+        &__row
+            &__cell
+                border-radius: 12px
+                @include space(column)
+                width: 56px
+                height: 56px
+                border: 1px dashed transparent
+                @include plus1366()
+                    position: absolute
+                    top: 0
+                    right: 0
+                    width: 100%
+                    height: 100%
+                &.shown
+                    border-color: #fff
+    &__numbers
+        display: none
+        grid-template-columns: repeat(18, 1fr)
+        justify-items: center
+        @include plus1366()
+            margin-bottom: 9px
+            display: grid
+        @include plus1600()
+            margin-bottom: 19px
+        &__cell
+            opacity: .3
+            font-family: bld
+            @include plus1366()
+                @include font(28px, 35px)
+            @include plus1600()
+                @include font(32px, 40px)
+
+table
+    background-color: transparent
+    border-spacing: 0
+    display: flex
+    width: 100%
+    margin: 0
+    tr
+        height: 56px
+        display: grid
+        grid-template-columns: repeat(18, 1fr)
+        grid-gap: 5px
+        @include plus1366()
+            height: unset
+    td
+        display: block
+        width: 56px
+        height: 56px
+        overflow: hidden
+        position: relative
+        cursor: pointer
+        @include plus1366()
+            width: 100%
+            padding-bottom: 100% 
+            &::before
+                content: ""
+                padding-bottom: 100%
+                display: block
+        
+    tr p
+        color: #FFFFFF
+
+    tr .content
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+        height: 100%
+        overflow-x: visible
+        padding: 5px
+
+        @include sizePlus(1900px) 
+            padding: 7px 10px
+        
+        p
+            font-weight: 100
+        .number            
+            @include font(13px, 14px)
+            @include sizePlus(1900px)            
+                @include font(16px, 17px)
+        .symbol
+            @include font(22px, 23px) 
+            @include plus1366() 
+                @include font(18px, 19px)
+            @include sizePlus(1900px)
+                @include font(26px, 27px)
+
+
+        .name
+            letter-spacing: -1.5px
+            @include font(9px, 10px)
+            @include plus1366()
+                @include font(12px, 13px)
+            @include sizePlus(1900px)
+                @include font(13px, 14px)
+        .mass
+            display: none
+            @include font(9px, 10px)
+            @include plus1366()
+                display: unset
+            @include sizePlus(1900px)
+                @include font(13px, 14px)
+
+    
+    tbody
+        display: grid
+        grid-gap: 5px
+        width: 100%
+    .green
+        background-color: #61A31F
+
+    .purple
+        background-color: #763DAD
+    
+    .brown
+        background-color: #A8621B
+    
+    .tale
+        background-color: #058673
+    
+    .yellowish
+        background-color: #C69119
+
+    .blue
+        background-color: #165B9F
+    
+    .red
+        background-color: #AA0C1C
+
+    .gray
+        background-color: #4D4B4B
+    
+    .pink
+        background-color: #B12863
+    
+    .darkbrown
+        background-color: #885724
+
+    .spacing td
+        margin-bottom: 20px
+        @include plus1366()
+            margin-bottom: 30px
+        @include sizePlus(1900px) 
+            margin-bottom: 50px
+
+    .centered
+        display: flex
+        align-items: center
+        justify-content: center
+
+    .white
+        background-color: #FFFFFF
+        display: flex
+        justify-content: center
+        p
+            color: #131313
+
+
+.periodic__content__row
+    position: relative
+        
+    &__cell
+        &.only2
+            .content
+                justify-content: center  
+    
+    @for $var from 1 through 9
+        &:nth-of-type(#{$var})
+            &::before
+                content: '#{$var}'
+                display: flex
+                height: 100%
+                position: absolute
+                right: calc(100% + 20px)
+                top: 0
+                align-items: center
+                opacity: .3
+                font-family: bld
+                @include plus1366()
+                    @include font(28px, 35px)
+                @include plus1600()
+                    @include font(32px, 40px)
+.spacing
+    position: relative
+    &::before
+        content: '7'
+        display: flex
+        height: 100%
+        position: absolute
+        right: calc(100% + 20px)
+        top: 0
+        align-items: center
+        box-sizing: border-box     
+        padding-bottom: 20px
+        @include plus1366()
+            padding-bottom: 30px
+        @include sizePlus(1900px) 
+            padding-bottom: 50px
+        opacity: .3
+        font-family: bld
+        @include plus1366()
+            @include font(28px, 35px)
+        @include plus1600()
+            @include font(32px, 40px)
+            
