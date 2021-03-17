@@ -1,0 +1,58 @@
+.aboutpage            
+    &__article
+        &__imgbox
+            border-radius: 12px
+            width: 100%
+            height: 160px
+            margin-bottom: 20px
+            overflow: hidden
+            @include plus700()
+                height: 300px
+                margin-bottom: 40px
+            @include sizePlus(1900px)
+                height: 400px
+            
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+        &__textbox, h2
+            max-width: 1083px
+            width: 100%
+            margin: 0 auto
+        h2
+            @include font(18px, 19px)
+            margin-bottom: 15px
+            @include plus1366()
+                @include font(28px, 29px)
+                margin-bottom: 28px
+            @include sizePlus(1900px)
+                @include font(32px, 33px)
+                max-width: 1135px
+                margin-bottom: 38px
+        &__textbox
+            font-family: lght
+            margin-bottom: 66px
+            @include font(13px, 25.6px)
+            @include plus1366()
+                @include font(16px, 25.6px)
+            @include sizePlus(1900px)
+                max-width: 1135px
+                margin-bottom: 96px
+                @include font(13px, 25.6px)
+            p
+                &:not(:last-child)
+                    margin-bottom: 1em
+
+        &__wrapper
+            .aboutpage__article                    
+                margin-bottom: 27px
+                @include plus1366()
+                    margin-bottom: 46px
+                @include sizePlus(1900px)
+                    margin-bottom: 86px
+                &:last-child
+                    @include plus1366()
+                        margin-bottom: 66px
+                    @include sizePlus(1900px)
+                        margin-bottom: 100px

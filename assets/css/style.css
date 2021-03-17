@@ -1434,11 +1434,37 @@ table .white p {
      object-fit: cover;
 }
 
-.aboutpage__article__textbox {
-  font-family: lght;
+.aboutpage__article__textbox, .aboutpage__article h2 {
   max-width: 1083px;
   width: 100%;
   margin: 0 auto;
+}
+
+.aboutpage__article h2 {
+  font-size: 18px;
+  line-height: 19px;
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 1366px) {
+  .aboutpage__article h2 {
+    font-size: 28px;
+    line-height: 29px;
+    margin-bottom: 28px;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .aboutpage__article h2 {
+    font-size: 32px;
+    line-height: 33px;
+    max-width: 1135px;
+    margin-bottom: 38px;
+  }
+}
+
+.aboutpage__article__textbox {
+  font-family: lght;
   margin-bottom: 66px;
   font-size: 13px;
   line-height: 25.6px;
@@ -1462,6 +1488,34 @@ table .white p {
 
 .aboutpage__article__textbox p:not(:last-child) {
   margin-bottom: 1em;
+}
+
+.aboutpage__article__wrapper .aboutpage__article {
+  margin-bottom: 27px;
+}
+
+@media screen and (min-width: 1366px) {
+  .aboutpage__article__wrapper .aboutpage__article {
+    margin-bottom: 46px;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .aboutpage__article__wrapper .aboutpage__article {
+    margin-bottom: 86px;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .aboutpage__article__wrapper .aboutpage__article:last-child {
+    margin-bottom: 66px;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .aboutpage__article__wrapper .aboutpage__article:last-child {
+    margin-bottom: 100px;
+  }
 }
 
 .contactpage {
