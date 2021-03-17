@@ -550,6 +550,158 @@ main {
   border-color: #fff;
 }
 
+.periodic__content__elementinfo {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (38px)[2] 90px (38px)[5];
+      grid-template-columns: repeat(2, 38px) 90px repeat(5, 38px);
+  -ms-grid-rows: 34px 138px;
+      grid-template-rows: 34px 138px;
+  border-radius: 12px;
+  overflow: hidden;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1366px) {
+  .periodic__content__elementinfo {
+    -ms-grid-columns: (43px)[2] 102px (43px)[5];
+        grid-template-columns: repeat(2, 43px) 102px repeat(5, 43px);
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 208px;
+  }
+}
+
+.periodic__content__elementinfo > div {
+  border: 1px solid #191919;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 13px;
+  line-height: 14px;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.periodic__content__elementinfo > div.vert {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.periodic__content__elementinfo > div.vert span {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(90deg) translateX(50%);
+          transform: rotate(90deg) translateX(50%);
+}
+
+.periodic__content__elementinfo .metals {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-column: 1 / 6;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  background-color: #fff;
+  color: #191919;
+}
+
+.periodic__content__elementinfo .metaloids {
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 1;
+  grid-column: 6 / 7;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+  background-color: #118673;
+}
+
+.periodic__content__elementinfo .nonmetals {
+  color: #191919;
+  background-color: #fff;
+  grid-column: span 2;
+}
+
+.periodic__content__elementinfo .alkali {
+  background-color: #A8621B;
+}
+
+.periodic__content__elementinfo .alkaline, .periodic__content__elementinfo .posttransmetals {
+  background-color: #C69120;
+}
+
+.periodic__content__elementinfo .alkaline span, .periodic__content__elementinfo .posttransmetals span {
+  -webkit-transform: rotate(90deg) translateX(41%) !important;
+          transform: rotate(90deg) translateX(41%) !important;
+}
+
+.periodic__content__elementinfo .lanthanoidsactinoids {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.periodic__content__elementinfo .lanthanoidsactinoids > div {
+  white-space: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  border: 1px solid #191919;
+}
+
+.periodic__content__elementinfo .lanthanoidsactinoids__lanthanoids {
+  background-color: #885724;
+}
+
+.periodic__content__elementinfo .lanthanoidsactinoids__actinoids {
+  background-color: #B12863;
+}
+
+.periodic__content__elementinfo .transmetals {
+  background-color: #AA0C1C;
+}
+
+.periodic__content__elementinfo .posttransmetals {
+  background-color: #165B9F;
+}
+
+.periodic__content__elementinfo .reactivenonmetals {
+  background-color: #61A31F;
+}
+
+.periodic__content__elementinfo .noblegasses {
+  background-color: #763DAD;
+}
+
 .periodic__numbers {
   display: none;
   -ms-grid-columns: (1fr)[18];
