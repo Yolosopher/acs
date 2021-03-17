@@ -8,52 +8,58 @@
 @import header
 @import myperiodic
 @import footer
+@import aboutus
 
 
-.aboutpage
-    color: #fff
-
-    h1
-        display: none
-        @include font(28px, 29px)
-        margin-bottom: 38px
-        text-transform: capitalize
-
-        @include plus1366()
-            display: block
+.contactpage
+    margin-bottom: 34px
+    @include plus700()
+        margin-bottom: 69px
+    @include sizePlus(1900px)
+        margin-bottom: 99px
+    &__map
+        width: 100%
+        height: 160px
+        overflow: hidden
+        border-radius: 12px
+        margin-bottom: 26px
+        @include plus700()
+            margin-bottom: 37px
+            height: 300px
         @include sizePlus(1900px)
-            @include font(32px, 33px)
-            
-    &__article
-        &__imgbox
-            border-radius: 12px
+            margin-bottom: 67px
+            height: 400px
+
+        > div
             width: 100%
-            height: 160px
-            margin-bottom: 20px
-            overflow: hidden
-            @include plus700()
-                height: 300px
-                margin-bottom: 40px
-            @include sizePlus(1900px)
-                height: 400px
+            height: 100%
+
+    &__info
+        display: grid
+        grid-gap: 17px
+        @include plus1025()
+            justify-content: space-between
+            grid-template-columns: repeat(4, auto)
+            grid-gap: 10px
+        h2
+            @include font(13px, 14px)
+            margin-bottom: 12px
+            color: $orange
+            text-transform: uppercase
+            @include plus1025()
+                @include font(16px, 17px)
+                margin-bottom: 16px
+        address
+            font-style: normal
             
-            img
-                width: 100%
-                height: 100%
-                object-fit: cover
-        &__textbox
-            font-family: lght
-            max-width: 1083px
-            width: 100%
-            margin: 0 auto
-            margin-bottom: 66px
-            @include font(13px, 25.6px)
-            @include plus1366()
-                @include font(16px, 25.6px)
-            @include sizePlus(1900px)
-                max-width: 1135px
-                margin-bottom: 96px
-                @include font(13px, 25.6px)
-            p
-                &:not(:last-child)
-                    margin-bottom: 1em
+        address, span, a
+            font-family: bld
+            @include font(16px, 25.6px)
+            color: #fff
+            @include plus1025()
+                @include font(22px, 30.6px)
+        ul
+            display: grid
+            grid-gap: 4px
+        li
+            text-decoration: none

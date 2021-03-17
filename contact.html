@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contact</title>
+		<link rel="stylesheet" href="assets/css/style.css" />
+	</head>
+	<body class="periodicBody">
+		<!-- header -->
+		<header class="header container">
+			<a href="index.html" class="header__logo">
+				<img class="large" src="assets/img/logo-large.svg" alt="" />
+				<img class="medium" src="assets/img/logo-medium.svg" alt="" />
+				<img class="small" src="assets/img/logo-small.svg" alt="" />
+			</a>
+			<nav class="header__nav">
+				<div class="header__nav__ul__wrapper">
+					<ul class="header__nav__ul">
+						<li class="header__nav__ul__li active">
+							<a href="index.html">home</a>
+						</li>
+						<li class="header__nav__ul__li">
+							<a href="aboutus.html">about us</a>
+						</li>
+						<li class="header__nav__ul__li">
+							<a href="projects.html">projects</a>
+						</li>
+						<li class="header__nav__ul__li">
+							<a href="contact.html">contact</a>
+						</li>
+					</ul>
+				</div>
+				<div class="burger-container" id="burger">
+					<div class="burger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!-- /header -->
+
+		<!-- contact -->
+		<main class="contactpage container">
+			<h1>contact</h1>
+			<div class="contactpage__map">
+				<div id="map"></div>
+			</div>
+			<div class="contactpage__info">
+				<div class="contactpage__info__item">
+					<h2>address</h2>
+					<address>
+						Georgia, Tbilisi Tsotne <br />
+						dadiani Street 45a
+					</address>
+				</div>
+				<div class="contactpage__info__item">
+					<h2>e-mail</h2>
+					<a href="mailto:example@gmail.com">example@gmail.com</a>
+				</div>
+				<div class="contactpage__info__item">
+					<h2>working hours</h2>
+					<span
+						>Mon. - Fri.: 09:00 - 18:00 <br />
+						Sat.: 10:00 - 17:00</span
+					>
+				</div>
+				<div class="contactpage__info__item">
+					<h2>social networks</h2>
+					<ul class="contactpage__info__socialsUl">
+						<li class="contactpage__info__socialsUl__li">
+							<a href="#" target="_blank">facebook</a>
+						</li>
+						<li class="contactpage__info__socialsUl__li">
+							<a href="#" target="_blank">gmail</a>
+						</li>
+						<li class="contactpage__info__socialsUl__li">
+							<a href="#" target="_blank">twitter</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</main>
+		<!-- /contact -->
+
+		<!-- footer -->
+		<footer class="footer container">
+			<div class="footer__content">
+				<a class="footer__mail" href="mailto:example@gmail.com"
+					>example@gmail.com</a
+				>
+				<div class="footer__C">
+					<div class="footer__C__rightsreserved">
+						All rights reserved
+					</div>
+					<div class="footer__C__smartweb">
+						created by <a href="https://smartweb.ge/">smartweb</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- /footer -->
+
+		<!-- imported packages -->
+
+		<!-- scripts -->
+		<script src="assets/js/main.js"></script>
+
+		<!-- scripts for only contacts -->
+
+        <!-- lat and long -->
+        <script>
+            let lattt = 41.725185409752655
+            let longgg = 44.80005885517563
+        </script>
+        <!-- /lat and long -->
+		<script>
+			// start init map
+			function initMap() {
+				// The location of location
+				let location = { lat: lattt, lng: longgg }
+				// options
+				const opts = {
+					zoom: 16,
+					zoomControl: true,
+					zoomControlOptions: {
+						position: google.maps.ControlPosition.LEFT_CENTER,
+					},
+					mapTypeControl: true,
+					mapTypeControlOptions: {
+						style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+					},
+					controlSize: 26,
+					streetViewControl: true,
+					fullscreenControl: true,
+
+					center: location,
+					styles: [
+						{
+							elementType: 'geometry',
+							stylers: [{ color: '#242f3e' }],
+						},
+						{
+							elementType: 'labels.text.stroke',
+							stylers: [{ color: '#242f3e' }],
+						},
+						{
+							elementType: 'labels.text.fill',
+							stylers: [{ color: '#746855' }],
+						},
+						{
+							featureType: 'administrative.locality',
+							elementType: 'labels.text.fill',
+							stylers: [{ color: '#d59563' }],
+						},
+						{
+							featureType: 'poi',
+							elementType: 'labels.text.fill',
+							stylers: [{ color: '#d59563' }],
+						},
+						{
+							featureType: 'poi.park',
+							elementType: 'geometry',
+							stylers: [{ color: '#263c3f' }],
+						},
+						{
+							featureType: 'poi.park',
+							elementType: 'labels.text.fill',
+							stylers: [{ color: '#6b9a76' }],
+						},
+						{
+							featureType: 'road',
+							elementType: 'geometry',
+							stylers: [{ color: '#38414e' }],
+						},
+						{
+							featureType: 'road',
+							elementType: 'geometry.stroke',
+							stylers: [{ color: '#212a37' }],
+						},
+						{
+							featureType: 'road',
+							elementType: 'labels.text.fill',
+							stylers: [{ color: '#9ca5b3' }],
+						},
+						{
+							featureType: 'road.highway',
+							elementType: 'geometry',
+							stylers: [{ color: '#746855' }],
+						},
+						{
+							featureType: 'road.highway',
+							elementType: 'geometry.stroke',
+							stylers: [{ color: '#1f2835' }],
+						},
+						{
+							featureType: 'road.highway',
+							elementType: 'labels.text.fill',
+							stylers: [{ color: '#f3d19c' }],
+						},
+						{
+							featureType: 'transit',
+							elementType: 'geometry',
+							stylers: [{ color: '#2f3948' }],
+						},
+						{
+							featureType: 'transit.station',
+							elementType: 'labels.text.fill',
+							stylers: [{ color: '#d59563' }],
+						},
+						{
+							featureType: 'water',
+							elementType: 'geometry',
+							stylers: [{ color: '#17263c' }],
+						},
+						{
+							featureType: 'water',
+							elementType: 'labels.text.fill',
+							stylers: [{ color: '#515c6d' }],
+						},
+						{
+							featureType: 'water',
+							elementType: 'labels.text.stroke',
+							stylers: [{ color: '#17263c' }],
+						},
+					],
+				}
+				// The map, centered at location
+				let map = new google.maps.Map(
+					document.getElementById('map'),
+					opts
+				)
+				// if (document.getElementById("map2")) {
+				// let map2 = new google.maps.Map(document.getElementById("map2"), opts);
+				// let marker2 = new google.maps.Marker({ position: location, map: map2 });
+				// }
+				// The marker, positioned at location
+				let marker = new google.maps.Marker({
+					position: location,
+					map: map,
+				})
+			}
+			// end init map
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4qXcpIcY9F-0osv8rC6voWz1fBtk06P4&amp;callback=initMap"></script>
+	</body>
+</html>

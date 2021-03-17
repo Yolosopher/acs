@@ -102,3 +102,17 @@ main
     min-height: calc(100vh - #{110px + 110px})
     @include plus1366()
         min-height: calc(100vh - #{110px + 166px})
+
+
+.aboutpage, .contactpage
+    color: #fff
+    h1
+        display: none
+        @include font(28px, 29px)
+        margin-bottom: 38px
+        text-transform: capitalize
+
+        @include plus1366()
+            display: block
+        @include sizePlus(1900px)
+            @include font(32px, 33px)
