@@ -1837,7 +1837,6 @@ table .white p {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  pointer-events: none;
   position: relative;
 }
 
@@ -1848,6 +1847,7 @@ table .white p {
 }
 
 .fixedsmallinfowindow__youtubelink.disabled {
+  pointer-events: none;
   border-color: transparent;
 }
 
