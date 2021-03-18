@@ -64,7 +64,10 @@
                 position: absolute
                 top: 0
                 left: 208px
-                // background-color: 
+            @include sizePlus(1900px)
+                grid-template-columns: repeat(2, 56px) 134px repeat(5, 56px)
+                grid-template-rows: 45px 180px
+                left: 380px
             > div
                 border: 1px solid $black
                 display: flex

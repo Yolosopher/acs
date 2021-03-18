@@ -1,0 +1,152 @@
+.fixedlargeinfowindow
+    width: 0
+    height: 0
+    z-index: 999
+    position: fixed
+    right: 50%
+    top: calc(50% - 1px)
+
+    // temporary
+    // width: 100%
+    // height: calc(100vh + 1px)
+    // opacity: 1
+
+
+    transform: translate(50%, -50%)
+    overflow: hidden
+    background-color: rgba(#111111, .8)
+    transition: all .3s ease
+    &.shown
+        width: 100%
+        height: calc(100vh + 1px)
+        opacity: 1
+
+
+    &__inner
+        width: 100%
+        height: 100%
+        padding: 25px 10px
+        overflow: hidden
+        @include plus1366()
+            padding: 40px 141px
+        @include sizePlus(1900px)
+            padding: 115px 393px
+    &__content
+        position: relative
+        background-color: #fff
+        color: $black
+        border-radius: 12px
+        width: 100%
+        height: 100%
+        padding: 40px 0
+        display: flex
+        flex-direction: column
+        position: relative
+
+
+        @include plus1366()
+            display: table
+            clear: both
+            padding: 40px 0
+        @include sizePlus(1900px)
+            padding: 50px 0
+        &__inner
+            height: 100%
+            overflow: auto
+            padding: 0 30px
+            @include plus1025()
+                scrollbar-width: thin
+                scrollbar-color: rgba($black, .8) transparent 
+            
+            @include plus1366()
+                height: calc( 100vh - 160px )
+                padding: 0 70px
+            @include sizePlus(1900px)
+                padding: 0 95px
+
+
+            &::-webkit-scrollbar 
+                @include plus1025()
+                    width: 5px
+                    background-color: #F2F2F2
+            &::-webkit-scrollbar-track
+                @include plus1025()
+                    background-color: transparent
+                    border-radius: 10px
+            &::-webkit-scrollbar-thumb
+                @include plus1025()
+                    background-color: rgba($black, .8)
+                    border-radius: 10px
+                    
+    &__close
+        position: absolute
+        top: 10px
+        right: 10px
+        cursor: pointer
+        @include plus1366()
+            top: 20px
+            right: 20px
+        @include sizePlus(1900px)
+            top: 15px
+            right: 15px
+
+    h2
+        @include font(32px, 40px)
+        color: $orange
+        margin-bottom: 27px
+        text-transform: capitalize
+        order: -1
+        
+    &__info
+        order: -1
+        display: grid
+        grid-template-columns: auto auto
+        grid-gap: 4px 30px
+        width: max-content
+        @include font(16px, 20px)
+        margin-bottom: 30px
+        @include plus1366()
+            margin-bottom: 40px
+
+        &__label
+            font-family: lght
+
+    &__imgbox
+        width: 100%
+        height: 180px
+        border-radius: 12px
+        overflow: hidden
+        flex-shrink: 0
+        display: flex
+        margin-bottom: 20px
+        @include plus700()
+            height: 400px
+        @include plus1366()
+            // position
+            width: 50%
+            height: 350px
+            float: right
+            margin-left: 100px
+            margin-bottom: 75px
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+    &__textdiv
+        flex-grow: 1
+
+    &__ytlinks
+        display: grid
+        width: 100%
+        grid-auto-rows: 250px
+        margin-top: 30px
+        grid-gap: 5px
+        @include plus1366()
+            grid-template-columns: 1fr 1fr
+
+
+        iframe
+            width: 100%
+            height: 100%
+            
