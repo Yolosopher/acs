@@ -28,20 +28,17 @@
         img
             height: 100%
             object-fit: contain
-            display: none
-        .small
-            display: unset
+            width: 65px
+            height: 70px
+            @include plus1366()
+                width: 102px
+                height: 110px
+            @include sizePlus(1900px)
+                width: 121px
+                height: 130px
         @include plus1366()
             position: static
-            .small
-                display: none
-            .medium
-                display: unset
-        @include sizePlus(1900px)
-            .medium
-                display: none
-            .large
-                display: unset
+
     &__nav
         display: flex
         justify-content: flex-end

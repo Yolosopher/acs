@@ -235,31 +235,27 @@ main {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  display: none;
+  width: 65px;
+  height: 70px;
 }
 
-.header__logo .small {
-  display: unset;
+@media screen and (min-width: 1366px) {
+  .header__logo img {
+    width: 102px;
+    height: 110px;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .header__logo img {
+    width: 121px;
+    height: 130px;
+  }
 }
 
 @media screen and (min-width: 1366px) {
   .header__logo {
     position: static;
-  }
-  .header__logo .small {
-    display: none;
-  }
-  .header__logo .medium {
-    display: unset;
-  }
-}
-
-@media screen and (min-width: 1900px) {
-  .header__logo .medium {
-    display: none;
-  }
-  .header__logo .large {
-    display: unset;
   }
 }
 
