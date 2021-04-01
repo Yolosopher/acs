@@ -1888,6 +1888,11 @@ table .white p {
   }
 }
 
+.fixedsmallinfowindow__submitbtn.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .fixedsmallinfowindow__minimize {
   position: absolute;
   top: 18px;

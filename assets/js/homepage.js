@@ -96,6 +96,14 @@ cells.forEach((cell) => {
 			} else {
 				infowindowYTlink.classList.add('disabled')
 			}
+			
+			let filtered = elements.filter(el => el.id === elementboxIDval)
+			console.log(filtered)
+			if (filtered[0]) {
+				document.querySelector('.fixedsmallinfowindow__submitbtn').classList.remove('hidden')
+			} else {
+				document.querySelector('.fixedsmallinfowindow__submitbtn').classList.add('hidden')
+			}
 			// END change infowindow content
 
 			cell.classList.add('shown')
