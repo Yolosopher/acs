@@ -1621,7 +1621,12 @@ table .white p {
 .contactpage__info ul {
   display: -ms-grid;
   display: grid;
-  grid-gap: 4px;
+  grid-gap: 12px;
+  -ms-grid-columns: (auto)[4];
+      grid-template-columns: repeat(4, auto);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .contactpage__info li {
